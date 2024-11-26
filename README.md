@@ -1,4 +1,4 @@
 # projeto01
-desenvolvimento projeto01
-
-Adicionando um HTML ao projeto e um stylo.css para dar uma cara.
+desenvolvimento Portfólio Thiago Jaques
+adicionando mais elementos html
+adicionando mais elementos css
