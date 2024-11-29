@@ -16,3 +16,14 @@ Alterações e Funcionalidades Adicionadas:
 3 - Validação do formulário com JavaScript.
 4 - Efeito de animação ao rolar a página.
 5 - Tema claro/escuro com alternância dinâmica.
+
+## Instalação
+
+para instalar o projeto localmente, instale o poetry e use o comando:
+poetry install
+
+Ative o ambiente virtual:
+poetry shell
+
+Rode o servidor local:
+python manage.py runserver
