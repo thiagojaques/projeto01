@@ -27,3 +27,6 @@ poetry shell
 
 Rode o servidor local:
 python manage.py runserver
+
+## GitHub Actions
+implementando o pasta .github/workflows com o arquivo django_ci.yml
