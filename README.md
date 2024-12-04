@@ -19,8 +19,8 @@ Alterações e Funcionalidades Adicionadas:
 
 ## Instalação
 
-para instalar o projeto localmente, instale o poetry e use o comando:
-poetry install
+para instalar o projeto localmente, instale o poetry e use o comando, com as dependências de desenvolvimento:
+poetry install --with dev
 
 Ative o ambiente virtual:
 poetry shell
