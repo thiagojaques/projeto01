@@ -5,6 +5,7 @@ description = "Projeto portfólio com Django"
 authors = ["Thiago <thiagohenriquedelimajaques@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.13"
@@ -16,6 +17,7 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 pytest-django = "^4.9.0"
 pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "portfolio.settings"
