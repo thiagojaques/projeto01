@@ -18,10 +18,19 @@ optional = true
 pytest-django = "^4.9.0"
 pytest = "^8.3.4"
 pytest-cov = "^6.0.0"
+ruff = "^0.8.2"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "portfolio.settings"
 python_files = ["test*.py", "*_test.py", "*.p_testy"]
+
+[tool.ruff]
+line-length = 120
+exclude = ['./portfolio/base/migrations']
+
+[tool.ruff.lint]
+select = ['I',]
+ignore = ['PLR2004']
 
 [build-system]
 requires = ["poetry-core"]
