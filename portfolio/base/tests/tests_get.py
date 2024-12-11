@@ -13,5 +13,5 @@ def test_status_code(resposta):
 def test_formulario_presente(resposta):
     assertContains(resposta, '<form')
 
-def test_do_botao_salvar_presente(resposta):
+def test_do_botao_enviar_contato_presente(resposta):
     assertContains(resposta, '<button type="submit"')

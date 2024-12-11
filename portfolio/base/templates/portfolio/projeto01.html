@@ -1,10 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Thiago Jaques</title>
-    <link rel='stylesheet' type='text/css' media='screen' href="projeto01.css'">
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/projeto01.css" %}'>
+    
 
     <script>
         // Adiciona funcionalidade ao botão "Voltar ao Topo"
@@ -22,6 +25,7 @@
     </script>
 </head>
 <body>
+<div>    
     <header>
         <h1>Thiago Jaques</h1>
         <button class="toggle-theme" onclick="toggleTheme()">Tema</button>
@@ -60,9 +64,19 @@
         </div>
     </section>
 
+    <section id="comentarios">
+        <form action="{% url 'base:home' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Adicione um comentário" aria-label="Adicione um comentário" aria-describedby="button-addon2" name="nome">
+            <button class="btn btn-primary" type="submit" id="button-addon2">Adicionar</button>
+            </div>
+        </form>
+    </section>    
+
     <section id="contato">
         <h2>Entre em Contato</h2>
-        <form action="{% url 'base:home' %}" id="contact-form" method="post" onsubmit="return validateForm()">
+        <form id="contact-form" method="post" onsubmit="return validateForm()">
             {% csrf_token %}
             <label for="nome">Nome:</label><br>
             <input type="text" id="nome" name="nome" required><br><br>
@@ -92,7 +106,7 @@
             const email = document.getElementById('email').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            if (!nome || !email || !mensagem) {
+            if (!nome || !email ) {
                 alert("Por favor, preencha todos os campos!");
                 return false;
             }
@@ -114,5 +128,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+</div>
 </body>
 </html>
