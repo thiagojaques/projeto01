@@ -1,0 +1,74 @@
+
+</head>
+<body>
+<div>
+
+<header>
+    <h1>Thiago Jaques</h1>
+    <button class="toggle-theme" onclick="toggleTheme()">Tema</button>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+<div>
+    
+</div>
+<section class="hero">
+    <h2>Bem-vindo ao meu portfólio, <span>Thiago Jaques</span>!</h2>
+    <p>Explorando soluções inteligentes para desafios complexos. Vamos construir algo incrível juntos.</p>
+</section>
+
+<section id="sobre">
+    <h2 class="section-title">Sobre Mim</h2>
+    <p class="paragrafo-sobre">Olá! Sou Thiago Jaques, um desenvolvedor back-end, apaixonado por resolver problemas usando tecnologia, sou especialista em Python, Django e bancos de dados.</p>
+</section>
+
+<section id="projetos">
+    <h2 class="section-title">Projetos</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Projeto 1</h3>
+            <p>Uma solução web para otimizar vendas online usando Django.</p>
+        </div>
+        <div class="project">
+            <h3>Projeto 2</h3>
+            <p>API REST para gerenciamento de tarefas com autenticação segura.</p>
+        </div>
+        <div class="project">
+            <h3>Projeto 3</h3>
+            <p>Dashboard interativo para análise de dados de negócios.</p>
+        </div>
+    </div>
+</section>
+
+<section id="comentarios">
+    <form action="{% url 'base:home' %}" method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Adicione um comentário" aria-label="Adicione um comentário" aria-describedby="button-addon2" name="nome">
+        <button class="btn btn-primary" type="submit" id="button-addon2">Adicionar</button>
+        </div>
+    </form>
+</section>    
+
+<section id="contato">
+    <h2>Entre em Contato</h2>
+    <form id="contact-form" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="5" ></textarea><br><br>
+        <button type="submit" class="btn btn-primary" id="button-addon2">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Thiago Jaques. Todos os direitos reservados.</p>
+</footer>
+
+</div>

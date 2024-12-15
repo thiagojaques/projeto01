@@ -11,3 +11,4 @@ def home(request):
         else:
             return render(request, 'portfolio/projeto01.html', {'form':form}, status=400)
     return render(request, 'portfolio/projeto01.html')
+

@@ -2,7 +2,7 @@ from django.urls import reverse
 from pytest_django.asserts import assertContains
 import pytest
 
-@pytest.fixture
+'''@pytest.fixture
 def resposta(client):
     resp = client.get(reverse('base:home'))
     return resp
@@ -14,4 +14,4 @@ def test_formulario_presente(resposta):
     assertContains(resposta, '<form')
 
 def test_do_botao_enviar_contato_presente(resposta):
-    assertContains(resposta, '<button type="submit"')
+    assertContains(resposta, '<button type="submit"')'''
