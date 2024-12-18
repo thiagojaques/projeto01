@@ -1,10 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from portfolio.base.forms import Comentario
+from portfolio.base.forms import Contato
 
 def home(request):
     if request.method == 'POST':
-        form = Comentario (request.POST)
+        form = Contato (request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reversed('portfolio:home'))

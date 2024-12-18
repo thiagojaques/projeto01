@@ -28,91 +28,99 @@
         }
     </script>
 </head>
+
 <body>
-
     <!-- Cabeçalho -->
-<header>
-    <h1>Thiago Jaques</h1>
-    <nav>
-        <div>
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
-        </div>
-    </nav>
-</header>
-<!-- definindo a imagem de fundo -->
-    <div>
-        <img class="imagem-de-fundo" src="static/img/img4.jpg" alt="imagem-do-background">
-        <!-- texto  -->
-        <div class="texto-sobreposto">
-            <section id="sobre">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="paragrafo-sobre">Olá! Sou Thiago Jaques, um desenvolvedor back-end, apaixonado por resolver problemas usando tecnologia, sou especialista em Python, Django e bancos de dados.</p>
-            </section>
 
+    <header class="menu">
+        <div class="menu-cont">
+            <h1>
+                <a class="logo" href="#">JAQUES </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li> <a href="#cabeçalho">Inicio</a> </li>
+                    <li> <a href="#projetos">Projetos</a> </li>
+                    <li> <a href="#contato">Contato</a> </li>
+                </ul>
+            </nav>
         </div>
-        <!-- Seção de projetos -->
-        <div>
-            <section id="projetos">
-                <h2 class="section-title">Projetos</h2>
-                <div class="projects">
-                    <div class="project">
-                        <h3>Projeto 1</h3>
-                        <p>Uma solução web para otimizar vendas online usando Django.</p>
-                    </div>
-                    <div class="project">
-                        <h3>Projeto 2</h3>
-                        <p>API REST para gerenciamento de tarefas com autenticação segura.</p>
-                    </div>
-                    <div class="project">
-                        <h3>Projeto 3</h3>
-                        <p>Dashboard interativo para análise de dados de negócios.</p>
-                    </div>
-                </div>
-            </section>
+    </header>
 
+
+    <!-- Seção de Introdução -->
+    <div class="intro">
+        <div  class="background">
+            <img class="img" src="static/img/img4.jpg" alt="Imagem de uma onça">
         </div>
-        
+    <!-- Texto de introdução -->
+        <div class="intro-text">
+            <h1 class="autor">Thiago Jaques</h1>
+            <h2 class="titulo">BACK-END DEVELOPER</h2>
+            <p class="descricao">
+                    Olá! Sou Thiago Jaques, Cristão, casado com a mulher mais
+                    incrível desse planeta. Pai do Khawann, Maitê e Madelayne,
+                    apaixonado por desenvolver soluções Web back-end,
+                    e sempre em busca de resolver problemas com tecnologias como Python,
+                    Django e bancos de dados.
+            </p>
+        </div>
     </div>
 
-<footer>
-    <p>&copy; 2024 Thiago Jaques. Todos os direitos reservados.</p>
-</footer>
-    <button id="btn-top" class="botao-topo" onclick="scrollToTop()">↑</button>
-<script>
-    // Alternância de tema claro/escuro
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-    }
+    <!-- Seção de Projetos -->
+    <section id="projetos">
+        <h2 class="section-title">Projetos</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Projeto 1</h3>
+                <p>Uma solução web para otimizar vendas online usando Django.</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 2</h3>
+                <p>API REST para gerenciamento de tarefas com autenticação segura.</p>
+            </div>
+            <div class="project">
+                <h3>Projeto 3</h3>
+                <p>Dashboard interativo para análise de dados de negócios.</p>
+            </div>
+        </div>
+    </section>
 
-    // Validação do formulário
-    function validateForm() {
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const mensagem = document.getElementById('mensagem').value;
+    <!-- Seção de Contato -->
+    <section id="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <form class="contact-form" action="{% url 'base:home' %}" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Seu email">
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required placeholder="Sua mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="button-addon2">Enviar</button>
+        </form>
+    </section>
 
-        if (!nome || !email ) {
-            alert("Por favor, preencha todos os campos!");
-            return false;
-        }
-        alert("Mensagem enviada com sucesso!");
-        return true;
-    }
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Thiago Jaques. Todos os direitos reservados.</p>
+    </footer>
 
-    // Mostrar botão "Voltar ao topo"
-    window.addEventListener('scroll', () => {
-        const btn = document.getElementById('btn-top');
-        if (window.scrollY > 300) {
-            btn.style.display = 'block';
-        } else {
-            btn.style.display = 'none';
-        }
-    });
-
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
+    <script>
+        // Seleciona os elementos
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
+    
+        // Adiciona o evento de clique no ícone do menu
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show'); // Adiciona ou remove a classe 'show' para mostrar ou ocultar o menu
+        });
+    </script>
+    
 </body>
 </html>
