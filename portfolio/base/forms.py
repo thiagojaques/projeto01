@@ -1,15 +1,8 @@
 from django.forms import ModelForm
-from portfolio.base.models import Comentario
-from rest_framework import serializers
-from .models import Produto
+from portfolio.base.models import Contato
 
 
-class Comentario(ModelForm):
+class Contato(ModelForm):
     class Meta:
-        model = Comentario
-        fields = ['nome']
-
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Produto
-        fields = '__all__'
+        model = Contato
+        fields = ['nome', 'email', 'mensagem']
