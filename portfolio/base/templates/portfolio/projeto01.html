@@ -58,11 +58,29 @@
             <h1 class="autor">Thiago Jaques</h1>
             <h2 class="titulo">BACK-END DEVELOPER</h2>
             <p class="descricao">
-                    Olá! Sou Thiago Jaques, Cristão, casado com a mulher mais
-                    incrível desse planeta. Pai do Khawann, Maitê e Madelayne,
-                    apaixonado por desenvolver soluções Web back-end,
-                    e sempre em busca de resolver problemas com tecnologias como Python,
-                    Django e bancos de dados.
+                Sou Thiago Jaques, cristão, casado e pai do Khawann, da
+                Maitê e da Madelayne. Minha trajetória profissional começou no
+                empreendedorismo, onde desenvolvi habilidades comportamentais,
+                emocionais e de comunicação que me ajudam a navegar em
+                ambientes dinâmicos e desafiadores.
+                Com o impacto da pandemia, fui inspirado a buscar uma transição
+                de carreira para a área de tecnologia, um campo que sempre me
+                fascinou. Decidi iniciar minha graduação em Ciência da Computação
+                e, desde então, tenho me aprofundado em diversas áreas da
+                tecnologia, com um foco especial no desenvolvimento de soluções
+                web back-end utilizando Python e o framework Django.
+                Estou constantemente expandindo meus conhecimentos e
+                habilidades, buscando criar soluções inovadoras que agreguem
+                valor. Estou empolgado com as possibilidades que a tecnologia
+                oferece e com os desafios dessa jornada.
+
+                Áreas de interesse
+                Desenvolvimento back-end
+                Frameworks Python (Django, Flask)
+                Modelagem e otimização de bancos de dados
+                Soluções tecnológicas para transformação digital.
+                Estou sempre aberto a trocar ideias, colaborar em projetos ou
+                discutir tendências na área de tecnologia.
             </p>
         </div>
     </div>
@@ -89,20 +107,24 @@
     <!-- Seção de Contato -->
     <section id="contato">
         <h2 class="section-title">Entre em Contato</h2>
-        <form class="contact-form" action="{% url 'base:home' %}" method="post">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+        <form class="contact-form" action="{% url 'base:home' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group" >
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Seu email">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required placeholder="Sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button-addon2">Enviar</button>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Seu email">
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required placeholder="Sua mensagem"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" id="button-addon2">Enviar</button>
+            <small class="form-text text-muted">{{ form.nome.errors }}</small>
         </form>
     </section>
 
